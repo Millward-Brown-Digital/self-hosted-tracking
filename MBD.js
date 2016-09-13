@@ -132,7 +132,7 @@ function MBD(settings)
 	this.SetLastInviteDate = function(campaignId)
 	{
 		var data = me.GetData()
-		data.invitedCampaigns[campaignID] = (new Date()).getTime();
+		data.invitedCampaigns[campaignId] = (new Date()).getTime();
 		me.SaveData(data);
 		me.Log('data set');
 		me.Log(data);
@@ -198,7 +198,7 @@ function MBD(settings)
 			}
 		}
 		impression.date =  new Date().getTime();
-		impression.campaignID = campaignId;
+		impression.campaignId = campaignId;
 
 		data.impressions[campaignId] = data.impressions[campaignId] || [];
 		data.impressions[campaignId].push(impression);
@@ -354,7 +354,7 @@ function MBD(settings)
 		var hidden = document.createElement('INPUT');
 		hidden.type = 'hidden';
 		hidden.name = 'impressions';
-		hidden.value = me.GetData().impressions[campaignId];
+		hidden.value = JSON.stringify(me.GetData().impressions[campaignId]);
 		form.appendChild(hidden);
 
 		form.submit();
