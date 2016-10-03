@@ -1,7 +1,7 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,89 +9,70 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Jumbotron Template for Bootstrap</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+</head>
 
-  <body>
-
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+<body>
     <div class="jumbotron">
-      <div class="container">
-        <h1>Self-Hosted Tracking Demo</h1>
-        <p>This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer when served from the filesystem due to localStorage not being available.</p>
-        <p><a class="btn btn-primary btn-lg" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></p>
-      </div>
+        <div class="container">
+            <h2>Self-Hosted Tracking Demo</h2>
+            <div style="float: right;"><a class="btn btn-primary btn-sm" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></div>
+        </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="AdPage1.html" role="button">Ad Page 1</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="AdPage2.html" role="button">Ad Page 2</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="ShowInvite.html" role="button">Force Invite</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" id="btnClearTracking" role="button">Clear Tracking History</a>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+
+        <div style="margin:2em 0"><h3>Impression Data</h3>
+            <div id="AdTrackingData" />
         </div>
-      </div>
 
-	  <div id="lipsum" style="margin:2em 0">
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non ex ac sapien ornare ullamcorper nec ut est. Maecenas gravida tortor nisl, quis pellentesque neque blandit vestibulum. Aliquam ut risus nunc. Phasellus tincidunt sem a placerat malesuada. Donec sagittis molestie lobortis. Fusce egestas consectetur mauris eget gravida. Aliquam lacinia pharetra imperdiet.
-</p>
-<p>
-Integer vulputate risus metus, in elementum turpis fringilla sed. Curabitur ornare faucibus dictum. Proin id sem blandit, tincidunt ante et, vulputate felis. Praesent at ullamcorper nibh, ac pulvinar sapien. Pellentesque sagittis ante vitae dui mollis, in euismod magna condimentum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus in purus ut ante malesuada aliquet. Sed ullamcorper ullamcorper erat eu fermentum. Vestibulum hendrerit blandit mi, eget consequat velit pulvinar nec. Cras tincidunt, nibh ac egestas finibus, quam mi dapibus ligula, vitae tristique tellus tortor eu eros.
-</p>
-<p>
-Suspendisse at libero aliquam, mattis purus vitae, fermentum enim. Ut eros justo, convallis a eros sit amet, tempor venenatis ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam lorem ipsum, feugiat hendrerit tempus id, laoreet non orci. Etiam eu tincidunt magna. Proin interdum nibh nec ipsum tempus, vitae bibendum est iaculis. Vestibulum ante elit, vestibulum in erat eget, maximus bibendum turpis. Aliquam blandit ultricies magna. Curabitur bibendum velit sit amet sem auctor, eget vestibulum neque blandit. Praesent sagittis semper vehicula. Nam posuere tempus commodo. Aenean dignissim eleifend facilisis. Quisque ultricies in sem eu consequat. In sodales, felis et ultricies lobortis, ligula lacus volutpat felis, eget consectetur lorem ligula et elit.
-</p>
-<p>
-Curabitur a fermentum neque. Aliquam erat volutpat. Nullam mollis ullamcorper ante, ac volutpat metus malesuada vel. Sed quis facilisis diam. Sed ultricies sagittis vestibulum. Pellentesque euismod justo tristique rutrum vestibulum. Sed vehicula dui vel rhoncus mollis. Sed volutpat vel quam ac congue. Phasellus venenatis arcu nec lacinia mattis. Quisque auctor ultrices neque, in congue urna tincidunt in. Nulla quis dictum leo. Etiam varius et nisl et cursus. Duis porta tempor massa, volutpat scelerisque urna ultrices sed. Integer ac nisl sed ipsum auctor porttitor. Mauris sed interdum purus. In sed magna leo.
-</p>
-<p>
-Aliquam convallis porttitor est vel eleifend. Vivamus ut mattis urna. Praesent eget iaculis turpis, et venenatis lorem. Quisque faucibus volutpat augue, quis vestibulum nulla ornare non. Sed pharetra quam non felis gravida pulvinar. Donec condimentum mi id ante gravida imperdiet. In hac habitasse platea dictumst. Vivamus non scelerisque eros. Praesent vel posuere elit, a sollicitudin libero. Vestibulum sem sapien, commodo et egestas quis, iaculis ut quam.
-</p></div>
-	  
-      <hr>
-
-      <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-    </div> <!-- /container -->
-
-
+        <hr>
+        <h5>
+            Note: This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer
+            when served from the filesystem due to localStorage not being available.
+        </h5>
+        <footer>
+            <p>&copy; 2016 Millward Bronwn, Inc.</p>
+        </footer>
+    </div>
     <!-- The MBD site-served tracking library
     ================================================== -->
-	<script src="./MBD.js"></script>
-	<script>
-		// Call MBD tracking library in IIFE to avoid name conflicts
-		(function() {
-			var campaignId = 12345; // this value to be provided by MBD
-			
-			var mbd = new MBD({
-				logging: true,
-				randomInvitePercent: 0,
-				remoteTracking: true
-			});
-			
-			
-			mbd.RecordImpression(campaignId, {
-				creativeId: 'creative-123', 
-				placementId: 'home-page-hero',
-				actionID: 1
-			});
-			
-			mbd.ShowInvite(12345);
-		})();	
-	</script>
-	</body>
+    <script src="./MBD.js"></script>
+    <script>
+        // Call in IIFE to avoid name conflicts
+        (function () {
+            // this value to be provided by MBD
+            var campaignId = 25535;
+
+            var res = JSON.stringify(new MBD().GetData(), null, 2);
+
+            var p = '<p><pre>' + res + '</pre></p>';
+            $('#AdTrackingData').append(p);
+
+            $('#btnClearTracking').on('click', function () {
+                new MBD().ClearTrackingData(campaignId); //clear tracking data
+                location.reload();
+            });
+
+
+        })();
+    </script>
+</body>
 </html>
+

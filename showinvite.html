@@ -1,0 +1,115 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Self-Hosted Tracking Demo</h2>
+            <div style="float: right;"><a class="btn btn-primary btn-sm" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></div>
+            <h3>Ad Page 1</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="index.html" role="button">Impression Data</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="AdPage1.html" role="button">Ad Page 1</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="AdPage2.html" role="button">Ad Page 2</a>
+            </div>
+        </div>
+
+        <div style="margin:2em 0">
+
+            <div id="page">
+                <h3>Forced Invite</h3>
+
+                <hr />
+
+                <div id="Content">
+                    <div>
+                        <img src="http://creativepool.com/marketing/images/brilliant-ads14.jpg" style="margin: 10px; float: right;vertical-align:top;width:50%" />
+                        <p>
+                            This page will force an invitation message to show if exposure for campaign 23456 has been recorded and a message has not already been shown in the past 10 minutes.
+                            <pre>
+                            <code>
+(function () {
+
+    // this value to be provided by MBD
+    var campaignId = 23456;
+
+    //instatiate MBD object with custom properties to force an invite always
+    var mbd = new MBD(
+    {
+        logging: true, //use for debugging
+        minutesBetweenInvites: 10 //don't limit how many invites can be shown for this campaign to a viewer
+    });
+
+    var imp = mbd.GetImpressions(campaignId);
+
+    if (imp.constructor === Array && imp.length>0)
+        mbd.ShowInvite(campaignId);
+})();
+                            </code>
+                        </pre>
+                        </p>
+                        <p>
+                            Donec in volutpat dolor. Etiam a ligula congue, sodales erat ac, viverra nisi. Proin neque velit, hendrerit in lectus sed, condimentum malesuada libero. In porttitor, quam sit amet venenatis gravida, mi neque interdum nibh, vestibulum dignissim metus urna in mi. Curabitur diam neque, consequat id nisi in, faucibus gravida neque. Phasellus maximus sodales tortor quis pretium. Sed et rutrum turpis, et faucibus ligula. Maecenas sed dui pretium, faucibus felis id, tincidunt dui. Suspendisse eu hendrerit erat. Proin non sollicitudin massa. Curabitur at enim nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                        </p>
+                        <p>
+                            Pellentesque euismod elit sem, quis sodales dui imperdiet eu. Nam egestas vel purus id dapibus. Pellentesque eleifend euismod volutpat. Curabitur congue arcu vel porttitor dictum. In et sollicitudin turpis, eget efficitur justo. Sed non felis est. Integer pretium odio at orci dignissim luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum id arcu purus. Fusce quis sem a arcu luctus hendrerit. Integer sit amet odio purus. Fusce ligula ipsum, tristique quis tincidunt a, tempor ut dui. Donec lectus est, tincidunt eget ex sed, interdum finibus ipsum. Quisque venenatis gravida congue. Morbi pulvinar viverra imperdiet.
+                        </p>
+                        <p>
+                            Etiam finibus vulputate facilisis. Nullam scelerisque purus non mi bibendum fringilla. In quis odio odio. Donec id iaculis nunc, sed dapibus lorem. Nam mollis, magna nec tempus interdum, dolor felis interdum enim, eget sodales diam neque non lectus. Vestibulum tincidunt mi at ex sagittis, in accumsan lectus placerat. Mauris ac mollis neque, eu dictum sem. Cras tristique orci sit amet volutpat fermentum. Morbi sit amet consequat lacus. Duis elementum feugiat metus ac hendrerit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <h5>
+                Note: This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer
+                when served from the filesystem due to localStorage not being available.
+            </h5>
+            <footer>
+                <p>&copy; 2016 Millward Bronwn, Inc.</p>
+            </footer>
+        </div>
+        <script src="MBD.js"></script>
+        <script>
+            // Call in IIFE to avoid name conflicts
+            (function () {
+                // this value to be provided by MBD
+                var campaignId = 23456;
+
+                //instatiate MBD object with custom properties to force an invite always
+                var mbd = new MBD(
+                        {
+                            logging: true, //use for debugging
+                            minutesBetweenInvites: 10 //don't limit how many invites can be shown for this campaign to a viewer
+                        });
+                var imp = mbd.GetImpressions(campaignId);
+                if (imp.constructor === Array && imp.length > 0)
+                    mbd.ShowInvite(campaignId);
+            })();
+        </script>
+
+</body>
+</html>

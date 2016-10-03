@@ -1,0 +1,118 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Self-Hosted Tracking Demo</h2>
+            <div style="float: right;"><a class="btn btn-primary btn-sm" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="index.html" role="button">Impression Data</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="AdPage2.html" role="button">Ad Page 2</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="ShowInvite.html" role="button">Force Invite</a>
+            </div>
+        </div>
+
+        <div style="margin:2em 0">
+            <div style="float: right; margin-top: 125px;" id="BannerContainer">
+                <div id="CreatveContainer">
+                    <img src="https://s-media-cache-ak0.pinimg.com/564x/e8/11/ea/e811ea7afd950b2f8c0d36a8c3760bb6.jpg" />
+                </div>
+
+                <script src="MBD.js"></script>
+                <script>
+                    // Call in IIFE to avoid name conflicts
+                    (function () {
+                        // this value to be provided by MBD
+                        var campaignId = 12345;
+
+                        //init MBD tracking with all default settings
+                        var mbd = new MBD();
+
+                        //record an impression for this creative
+                        //can pass anything you need to track here
+                        mbd.RecordImpression(campaignId, {
+                            creativeId: 'fear1234',
+                            placementId: 'placement1234',
+                            actionID: 1
+                        });
+                    })();
+                </script>
+
+            </div>
+            <div id="page">
+                <h3>Ad Page 1</h3>
+
+                <hr />
+
+                <div id="Content" style="margin-right: 750px;">
+                    <div id="lipsum">
+                        <p>
+                            This page serves up ad #1, for campaign 12345, and records an impression record on exposure.
+                            <pre>
+                            <code>
+(function () {
+    // this value to be provided by MBD
+    var campaignId = 12345;
+
+    //init MBD tracking with all default settings
+    var mbd = new MBD();
+
+    //record an impression for this creative
+    //can pass anything you need to track here
+    mbd.RecordImpression(campaignId, {
+        creativeId: 'fear1234',
+        placementId: 'placement1234',
+        actionID: 1
+    });
+})();
+                            </code>
+                        </pre>
+                        </p>
+                        <p>
+<p>
+                            Etiam finibus vulputate facilisis. Nullam scelerisque purus non mi bibendum fringilla. In quis odio odio. Donec id iaculis nunc, sed dapibus lorem. Nam mollis, magna nec tempus interdum, dolor felis interdum enim, eget sodales diam neque non lectus. Vestibulum tincidunt mi at ex sagittis, in accumsan lectus placerat. Mauris ac mollis neque, eu dictum sem. Cras tristique orci sit amet volutpat fermentum. Morbi sit amet consequat lacus. Duis elementum feugiat metus ac hendrerit.
+                        </p>
+                        <p>
+                            Pellentesque euismod elit sem, quis sodales dui imperdiet eu. Nam egestas vel purus id dapibus. Pellentesque eleifend euismod volutpat. Curabitur congue arcu vel porttitor dictum. In et sollicitudin turpis, eget efficitur justo. Sed non felis est. Integer pretium odio at orci dignissim luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum id arcu purus. Fusce quis sem a arcu luctus hendrerit. Integer sit amet odio purus. Fusce ligula ipsum, tristique quis tincidunt a, tempor ut dui. Donec lectus est, tincidunt eget ex sed, interdum finibus ipsum. Quisque venenatis gravida congue. Morbi pulvinar viverra imperdiet.
+                        </p>
+                        <p>
+                            Etiam finibus vulputate facilisis. Nullam scelerisque purus non mi bibendum fringilla. In quis odio odio. Donec id iaculis nunc, sed dapibus lorem. Nam mollis, magna nec tempus interdum, dolor felis interdum enim, eget sodales diam neque non lectus. Vestibulum tincidunt mi at ex sagittis, in accumsan lectus placerat. Mauris ac mollis neque, eu dictum sem. Cras tristique orci sit amet volutpat fermentum. Morbi sit amet consequat lacus. Duis elementum feugiat metus ac hendrerit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+            <h5>
+                Note: This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer
+                when served from the filesystem due to localStorage not being available.
+            </h5>
+            <footer>
+                <p>&copy; 2016 Millward Bronwn, Inc.</p>
+            </footer>
+        </div>
+</body>
+</html>

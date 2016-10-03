@@ -1,0 +1,190 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Self-Hosted Tracking Demo</h2>
+            <div style="float: right;"><a class="btn btn-primary btn-sm" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="index.html" role="button">Impression Data</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="AdPage1.html" role="button">Ad Page 1</a>
+            </div>
+            <div class="col-md-4">
+                <a class="btn btn-primary btn-sm" href="ShowInvite.html" role="button">Force Invite</a>
+            </div>
+        </div>
+
+        <div id="lipsum" style="margin:2em 0">
+            <div style="float: right; margin-top: 125px;" id="BannerContainer">
+                <div id="CreatveContainer">
+                    <img src="https://s-media-cache-ak0.pinimg.com/236x/48/34/07/4834070ef75cd8b5b6c904093d5514ab.jpg" />
+                </div>
+
+                <script src="MBD.js"></script>
+                <script>
+            // Call in IIFE to avoid name conflicts
+            (function () {
+                // this value to be provided by MBD
+                var campaignId = 23456;
+
+                //init MBD tracking with some user specified settings
+                //
+                var mbd = new MBD(
+                    {
+                        logging: true, //use for debugging
+                        randomInvitePercent: 25, //25% of impressions will be randomly invited
+                        acceptUrl: 'http://host2//ix/public/LocalTracking', //override the accept url
+
+                        inviteCss: '\
+			                    #mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
+			                    #mbd-invite.visible { opacity:1;  }\
+			                    #mbd-invite div { padding:0.5em 1em; background:#D8D8D8; border-radius:4px; }\
+			                    #mbd-invite p { margin:1em 0; }\
+			                    #mbd-invite a { margin:1em 0; }\
+			                    #mbd-invite button {  margin-left:0;     transition: all .3s ease 0s; background: #6A1280;    color: #fff;    border: none;    font-size: 20px;    padding: 10px 20px; }\
+			                    #mbd-invite button:hover { background: #A200AD;    }\
+			                    #mbd-invite label { color: #999; }\
+			                    #mbd-cancel { float:right; }\
+		                ', //override the invite pop-up css
+                        inviteHtml: '\
+			                <div id="mbd-invite">\
+				                <p>Let us know what you think!</p>\
+				                <div>\
+				                <p>Would you please take a few minutes and provide your feedback?</p>\
+				                </div>\
+				                <p>\
+				                <button id="mbd-accept">Take a survey</button>\
+				                <a href="#" id="mbd-cancel">no thanks</a>\
+				                </p>\
+				                <p>\
+				                <label><input id=mbd-optout type=checkbox> don\'t ask me again<label>\
+				                </p>\
+			                </div>\
+		                ', //override the invite pop-up htnml
+                        minutesBetweenInvites: 0 //don't limit how many invites can be shown for this campaign to a viewer
+                    });
+
+                //record an impression for this creative
+                //can pass anything you need to track here
+                mbd.RecordImpression(campaignId, {
+                    creativeId: 'guncontrol4567',
+                    placementId: 'placement9999',
+                    siteId: 'Lorem',
+                    bannerId: '9876543',
+                    deviceId: '0c9c62bc-9828-43a8-8999-256ad98c4114'
+                });
+            })();
+                </script>
+
+            </div>
+            <div id="page">
+                <h3>Ad Page 2</h3>
+
+                <hr />
+
+                <div id="Content" style="margin-right: 450px;">
+                    <div id="lipsum">
+                        <p>
+                            This page serves up ad #2, for campaign 23456, and records an impression record on exposure. This page will also randomly show invitations 25% of the time, has an alternate link for survey routing, and has a slightly customized invite notice.
+                            <pre>
+                            <code>
+(function () {
+    // this value to be provided by MBD
+    var campaignId = 23456;
+    //init MBD tracking with some user specified settings
+    //
+    var mbd = new MBD(
+    {
+        logging: true, //use for debugging
+        randomInvitePercent: 25, //25% of impressions will be randomly invited
+        acceptUrl: 'http://host2//ix/public/LocalTracking', //override the accept url
+        inviteCss: '\
+			    #mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
+			    #mbd-invite.visible { opacity:1;  }\
+			    #mbd-invite div { padding:0.5em 1em; background:#D8D8D8; border-radius:4px; }\
+			    #mbd-invite p { margin:1em 0; }\
+			    #mbd-invite a { margin:1em 0; }\
+			    #mbd-invite button {  margin-left:0;     transition: all .3s ease 0s; background: #6A1280;    color: #fff;    border: none;    font-size: 20px;    padding: 10px 20px; }\
+			    #mbd-invite button:hover { background: #A200AD;    }\
+			    #mbd-invite label { color: #999; }\
+			    #mbd-cancel { float:right; }\
+	    ', //override the invite pop-up css
+        inviteHtml: '\
+            &lt;div id="mbd-invite"&gt;\
+        &lt;p&gt;Let us know what you think!&lt;/p&gt;\
+        &lt;div&gt;
+            \
+            &lt;p&gt;Would you please take a few minutes and provide your feedback?&lt;/p&gt;\
+        &lt;/div&gt;\
+        &lt;p&gt;
+            \
+            &lt;button id="mbd-accept"&gt;Take a survey&lt;/button&gt;\
+            &lt;a href="#" id="mbd-cancel"&gt;no thanks&lt;/a&gt;\
+        &lt;/p&gt;\
+        &lt;p&gt;
+            \
+            &lt;label&gt;&lt;input id=mbd-optout type=checkbox&gt; don\'t ask me again&lt;label&gt;\
+        &lt;/p&gt;\
+    &lt;/div&gt;\
+    ', //override the invite pop-up htnml
+    minutesBetweenInvites: 0 //don't limit how many invites can be shown for this campaign to a viewer
+    });
+
+    //record an impression for this creative
+    //can pass anything you need to track here
+    mbd.RecordImpression(campaignId, {
+    creativeId: 'guncontrol4567',
+    placementId: 'placement9999',
+    siteId: 'Lorem',
+    bannerId: '9876543',
+    deviceId: '0c9c62bc-9828-43a8-8999-256ad98c4114'
+    });
+})();                      </code>
+                    </pre>
+                    </p>
+                    <p>
+                        Donec in volutpat dolor. Etiam a ligula congue, sodales erat ac, viverra nisi. Proin neque velit, hendrerit in lectus sed, condimentum malesuada libero. In porttitor, quam sit amet venenatis gravida, mi neque interdum nibh, vestibulum dignissim metus urna in mi. Curabitur diam neque, consequat id nisi in, faucibus gravida neque. Phasellus maximus sodales tortor quis pretium. Sed et rutrum turpis, et faucibus ligula. Maecenas sed dui pretium, faucibus felis id, tincidunt dui. Suspendisse eu hendrerit erat. Proin non sollicitudin massa. Curabitur at enim nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+                    </p>
+                    <p>
+                        Pellentesque euismod elit sem, quis sodales dui imperdiet eu. Nam egestas vel purus id dapibus. Pellentesque eleifend euismod volutpat. Curabitur congue arcu vel porttitor dictum. In et sollicitudin turpis, eget efficitur justo. Sed non felis est. Integer pretium odio at orci dignissim luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum id arcu purus. Fusce quis sem a arcu luctus hendrerit. Integer sit amet odio purus. Fusce ligula ipsum, tristique quis tincidunt a, tempor ut dui. Donec lectus est, tincidunt eget ex sed, interdum finibus ipsum. Quisque venenatis gravida congue. Morbi pulvinar viverra imperdiet.
+                    </p>
+                    <p>
+                        Etiam finibus vulputate facilisis. Nullam scelerisque purus non mi bibendum fringilla. In quis odio odio. Donec id iaculis nunc, sed dapibus lorem. Nam mollis, magna nec tempus interdum, dolor felis interdum enim, eget sodales diam neque non lectus. Vestibulum tincidunt mi at ex sagittis, in accumsan lectus placerat. Mauris ac mollis neque, eu dictum sem. Cras tristique orci sit amet volutpat fermentum. Morbi sit amet consequat lacus. Duis elementum feugiat metus ac hendrerit.
+                    </p>
+                </div>
+                </div>
+            </div>
+
+            <hr>
+            <h5>
+                Note: This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer
+                when served from the filesystem due to localStorage not being available.
+            </h5>
+            <footer>
+                <p>&copy; 2016 Millward Bronwn, Inc.</p>
+            </footer>
+        </div>
+</body>
+</html>
