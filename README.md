@@ -91,12 +91,11 @@ Usage:
 </script>
 ```
 Note:   If not using the default, the "inviteHtml" setting should contain <div id="mbd-invite"> as well as
-        an accept and cancel link with id's of "mbd-accept" and "mbd-cancel" respectively.
+        an accept and cancel link with id's of "mbd-accept" and "mbd-cancel" respectively. This demo works in
+	all browsers when served from a webserver, but will not function correctly within Internet Explorer 
+	when served from a local filesystem due to local strage not being available.
         
-        This demo works in all browsers when served from a webserver, but will not function correctly 
-        within Internet Explorer when served from a local filesystem due to local strage not being available.
-
-
+	
 ###API Reference
 
 ```
