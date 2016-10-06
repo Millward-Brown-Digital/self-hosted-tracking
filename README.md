@@ -24,6 +24,7 @@ Defaults:
     canInvite: true, //Allow invite notices to be generated
     forceInvite: false, //Automatically show an invite message when recording an impression
     allowRepeatInvites: true, //Allow more than one invite message to show for a given campaign
+    allowRepeatAccepts: false, //Allow subsequent invites for a campaign that has already had an invite accepted
     remoteTracking: false, //Enable ping to a remote URL for external tracking
     minutesBetweenInvites: 60, //Timespan in minutes to disable next invite from being generated
     hideDelay: 10000, //Timespan in ms to keep an invite notice visible (10 seconds default)
@@ -156,6 +157,11 @@ bool    RecentlyInvited(campaignId):
 bool    AlreadyInvited(campaignId): 
             Returns whether or not the user has ever seen an invite message for this
             campaignId.
+```
+
+```
+bool    HasAccepted(campaignId): 
+            Returns whether or not the user has accepted an invite for this campaignId.
 ```
 
 ```
