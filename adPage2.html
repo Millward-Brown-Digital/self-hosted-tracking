@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>MBD Site Hosted Ad Tracking: Ad #2 Campaign 23456</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
 </head>
@@ -55,7 +55,7 @@
                     {
                         logging: true, //use for debugging
                         randomInvitePercent: 25, //25% of impressions will be randomly invited
-                        acceptUrl: 'http://host2//ix/public/LocalTracking', //override the accept url
+                        acceptUrl: 'http://host2/LocalTracking', //override the accept url
 
                         inviteCss: '\
 			                    #mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
@@ -83,7 +83,7 @@
 				                </p>\
 			                </div>\
 		                ', //override the invite pop-up htnml
-                        minutesBetweenInvites: 0 //don't limit how many invites can be shown for this campaign to a viewer
+                        minutesBetweenInvites: 0, //don't limit how many invites can be shown for this campaign to a viewer
                     });
 
                 //record an impression for this creative
@@ -119,7 +119,6 @@
     {
         logging: true, //use for debugging
         randomInvitePercent: 25, //25% of impressions will be randomly invited
-        acceptUrl: 'http://host2//ix/public/LocalTracking', //override the accept url
         inviteCss: '\
 			    #mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
 			    #mbd-invite.visible { opacity:1;  }\
@@ -183,7 +182,7 @@
                 when served from the filesystem due to localStorage not being available.
             </h5>
             <footer>
-                <p>&copy; 2016 Millward Bronwn, Inc.</p>
+                <p>&copy; 2016 Kantar Millward Brown</p>
             </footer>
         </div>
 </body>

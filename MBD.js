@@ -31,6 +31,7 @@ function MBD(settings) {
         canInvite: true,
         forceInvite: false,
         allowRepeatInvites: true,
+        allowRepeatAccepts: false,
         remoteTracking: false,
         minutesBetweenInvites: 60,
         hideDelay: 10000,
@@ -154,6 +155,33 @@ function MBD(settings) {
             localStorage.setItem(me.localStorageKey, JSON.stringify(data));
     }
 
+    this.keyExists = function (key, search) {
+        if (!search || (search.constructor !== Array && search.constructor !== Object)) {
+            return false;
+        }
+        for (var i = 0; i < search.length; i++) {
+            if (search[i] === key) {
+                return true;
+            }
+        }
+        return key in search;
+    }
+
+    this.SetAccepted = function (campaignId) {
+        var data = me.GetData();
+        if (data.acceptedCampaigns === undefined)
+            data.acceptedCampaigns = [];
+        if (!me.keyExists(campaignId,data.acceptedCampaigns))
+            data.acceptedCampaigns.push(campaignId);
+        me.SetData(data);
+    }
+
+    this.HasAccepted = function (campaignId)
+    {
+        var data = me.GetData();
+        return me.keyExists(campaignId, data.acceptedCampaigns);
+    }
+
     this.SetOptOut = function (optout) {
         var data = me.GetData();
         data.optout = optout;
@@ -239,8 +267,13 @@ function MBD(settings) {
             return;
         }
 
-        if (me.AlreadyInvited(campaignId) && !allowRepeatInvites) {
+        if (me.AlreadyInvited(campaignId) && !me.allowRepeatInvites) {
             me.Log('Already invited for campaign ' + campaignId);
+            return;
+        }
+
+        if (!me.allowRepeatAccepts && me.HasAccepted(campaignId)) {
+            me.Log('Has already accepted an invite for campaign ' + campaignId);
             return;
         }
 
@@ -321,6 +354,7 @@ function MBD(settings) {
     };
 
     this.Accept = function (campaignId) {
+        
         var form = document.createElement('FORM');
         form.method = 'POST';
         form.action = me.acceptUrl;
@@ -332,6 +366,8 @@ function MBD(settings) {
         hidden.name = 'impressions';
         hidden.value = JSON.stringify(me.GetData().impressions[campaignId]);
         form.appendChild(hidden);
+
+        me.SetAccepted(campaignId);
 
         form.submit();
         form.parentNode.removeChild(form);

@@ -89,7 +89,7 @@
                 when served from the filesystem due to localStorage not being available.
             </h5>
             <footer>
-                <p>&copy; 2016 Millward Bronwn, Inc.</p>
+                <p>&copy; 2016 Kantar Millward Brown</p>
             </footer>
         </div>
         <script src="MBD.js"></script>
@@ -103,7 +103,8 @@
                 var mbd = new MBD(
                         {
                             logging: true, //use for debugging
-                            minutesBetweenInvites: 10 //don't limit how many invites can be shown for this campaign to a viewer
+                            minutesBetweenInvites: 0, //don't limit how many invites can be shown for this campaign to a viewer
+                            acceptUrl: 'http://host1/LocalTracking'
                         });
                 var imp = mbd.GetImpressions(campaignId);
                 if (imp.constructor === Array && imp.length > 0)
