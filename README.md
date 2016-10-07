@@ -31,8 +31,7 @@ Defaults:
     randomInvitePercent: 0, //Percentage chance to generate an invite notice when an impression is recorded (value 0 - 100)
     localStorageKey: 'MBD', //Unique value to identify MBD impression data in local storage
     acceptTarget: '_self', //Target to where a survey is loaded if a user accepts a survey invite
-    acceptUrl: 'http://www.insightexpressai.com/ix/public/LocalTracking', //MBD Routing URL for delivery to a survey
-    remoteTrackingUrl: 'http://core.insightexpressai.com/adserver/adserveresi.aspx', //MBD impression tracking URL
+    acceptUrl: 'http://host1/LocalTracking', //MBD Routing URL for delivery to a survey
     inviteCss: '\
 			#mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
 			#mbd-invite.visible { opacity:1;  }\
@@ -121,8 +120,6 @@ void    RecordImpression(campaignId, {detail1: value1, detail2: value2 ... }):
                     }
                 );
             
-            If the remote tracking setting is turned on, this function will also ping the URL specified in
-            "remoteTrackingUrl" with the supplied details passed as query string values. 
 ```
 
 ```
