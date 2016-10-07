@@ -38,8 +38,8 @@ function MBD(settings) {
         randomInvitePercent: 0,
         localStorageKey: 'MBD',
         acceptTarget: '_self',
-        acceptUrl: 'http://www.insightexpressai.com/ix/public/LocalTracking',
-        remoteTrackingUrl: 'http://core.insightexpressai.com/adserver/adserveresi.aspx',
+        acceptUrl: 'http://host1/LocalTracking',
+        remoteTrackingUrl: '',
 
         inviteCss: '\
 			#mbd-invite { width:340px; padding:20px; font-size:15px; box-sizing:border-box; background:#F4F4F4; position:fixed; bottom: 0; right:8px;    box-shadow: 0 0 5px rgba(0, 0, 0, 0.45); opacity:0; transition: all 1s; }\
