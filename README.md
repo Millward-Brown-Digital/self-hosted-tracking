@@ -8,7 +8,7 @@ The tracking object allows you to record tracking data in localStorage and then 
 
 Tracking is accomplished by creating an instance of the MBD tracking system with optionally specified default settings and then recording one or more impressions by called 
 
-    .RecordImpression(campaignId, { additional: value, additional: value }).
+    .RecordImpression(campaignId, { additional: value, additional: value })
 
 campaignId will be assigned to your campaign as a unique value so that multiple campaigns can be tracked and so that when invitations are isssued, a record is recorded of which campaigns a respondent has been invited for. 
 
