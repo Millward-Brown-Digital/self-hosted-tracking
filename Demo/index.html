@@ -1,0 +1,77 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>MBD Site Hosted Ad Tracking: Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h2>Self-Hosted Tracking Demo</h2>
+            <div style="float: right;"><a class="btn btn-primary btn-sm" href="https://github.com/Millward-Brown-Digital/self-hosted-tracking" role="button">Fork on github &raquo;</a></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="AdPage1.html" role="button">Ad Page 1</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="AdPage2.html" role="button">Ad Page 2</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" href="ShowInvite.html" role="button">Force Invite</a>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-primary btn-sm" id="btnClearTracking" role="button">Clear Tracking History</a>
+            </div>
+        </div>
+
+        <div style="margin:2em 0"><h3>Impression Data</h3>
+            <div id="AdTrackingData" />
+        </div>
+
+        <hr>
+        <h5>
+            Note: This demo works in all browsers when served from a webserver, but will not function correctly within Internet Explorer
+            when served from the filesystem due to localStorage not being available.
+        </h5>
+        <footer>
+            <p>&copy; 2016 Kantar Millward Brown</p>
+        </footer>
+    </div>
+    <!-- The MBD site-served tracking library
+    ================================================== -->
+    <script src="./MBD.js"></script>
+    <script>
+        // Call in IIFE to avoid name conflicts
+        (function () {
+            // this value to be provided by MBD
+
+            var res = JSON.stringify(new MBD().GetData(), null, 2);
+
+            var p = '<p><pre>' + res + '</pre></p>';
+            $('#AdTrackingData').append(p);
+
+            $('#btnClearTracking').on('click', function () {
+                new MBD().ClearTrackingData(campaignId); //clear tracking data
+                location.reload();
+            });
+
+
+        })();
+    </script>
+</body>
+</html>
+
